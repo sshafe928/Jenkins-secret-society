@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 3em;
+            position: relative;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .letter {
+            display: inline-block;
+            opacity: 1;
+            animation: fadeOut 1s ease-in forwards;
+        }
+
+        /* The animation uses a delay based on the letter's index */
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            50%{
+                opacity:.5;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="letter" id="header">Find  Me....</h1>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const header = document.getElementById('header');
+            const text = header.textContent;
+            header.innerHTML = ''; // Clear the original text
+
+            // Create spans for each letter
+            text.split('').forEach((char, index) => {
+                const span = document.createElement('span');
+                span.className = 'letter';
+                span.textContent = char;
+                // Set the delay based on the index
+                span.style.animationDelay = `${index * 0.9}s`; // Adjust the delay time as needed
+                header.appendChild(span);
+            });
+        });
+    </script>
+</body>
+</html>
