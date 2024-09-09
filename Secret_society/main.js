@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
         case '/puzzle1':
             filePath = path.join(__dirname, 'public', 'puzzle1.html');
             break;
-        case '/puzzle2':
+        case '/hiddentreasure':
             filePath = path.join(__dirname, 'public', 'puzzle2.html');
             break;
         case '/puzzle3':

@@ -13,14 +13,28 @@
             margin: 0;
             background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            cursor:help
         }
 
         h1 {
             font-size: 3em;
             position: relative;
             display: inline-block;
-            white-space: nowrap;
+            white-space: pre;
             overflow: hidden;
+            
+        }
+        h4 {
+            opacity:0;
+            font-size: 1em;
+            position: absolute;
+            margin-left: -50% ;
+            margin-top:-40%;
+        }
+        h4:hover {
+            cursor:progress;  
+            
+            animation: fadeIn 3s ease-in forwards;  
         }
 
         .letter {
@@ -41,10 +55,24 @@
                 opacity: 0;
             }
         }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            50%{
+                opacity:0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1 class="letter" id="header">Find  Me....</h1>
+    <h1 id="header">Find  Me....</h1>
+    <div class="close">
+    <h4>/hiddentreasure</h4>
+    </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const header = document.getElementById('header');
@@ -57,7 +85,7 @@
                 span.className = 'letter';
                 span.textContent = char;
                 // Set the delay based on the index
-                span.style.animationDelay = `${index * 0.9}s`; // Adjust the delay time as needed
+                span.style.animationDelay = `${index * 0.2}s`; // Adjust the delay time as needed
                 header.appendChild(span);
             });
         });
