@@ -3,9 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hover to Reveal Answers</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #404d5e;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            gap: 60px;
+        }
+
+        .square {
+            width: 150px;
+            height: 150px;
+            background-color: #6988ac;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .square .answer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .square:hover .answer {
+            opacity: 1;
+        }
+        .square:hover .question {
+            opacity: 0;
+        }
+
+        .square .question {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="square">
+            <div class="question">Puzzle 1</div>
+            <div class="answer">/hiddentreasure</div>
+        </div>
+        <div class="square">
+            <div class="question">Puzzle 2</div>
+            <div class="answer">/baseball</div>
+        </div>
+        <div class="square">
+            <div class="question">Puzzle 3</div>
+            <div class="answer">Answer 3</div>
+        </div>
+        <div class="square">
+            <div class="question">Puzzle 4</div>
+            <div class="answer">Answer 4</div>
+        </div>
+        <div class="square">
+            <div class="question">Puzzle 5</div>
+            <div class="answer">Answer 5</div>
+        </div>
+        <div class="square">
+            <div class="question">Puzzle 6</div>
+            <div class="answer">Answer 6</div>
+        </div>
+    </div>
 </body>
 </html>

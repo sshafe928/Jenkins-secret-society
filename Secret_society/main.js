@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
         case '/hiddentreasure':
             filePath = path.join(__dirname, 'public', 'puzzle2.html');
             break;
-        case '/puzzle3':
+        case '/baseball':
             filePath = path.join(__dirname, 'public', 'puzzle3.html');
             break;
         case '/puzzle4':

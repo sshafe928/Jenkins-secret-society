@@ -3,68 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hints</title>
+    <title>Hover to Reveal Answers</title>
     <style>
-        * {
-    margin: 20px;
-    padding: 30px;
-    box-sizing: border-box;
-    overflow: hidden;
-}
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #405e43;
+            font-family: Arial, sans-serif;
+        }
 
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            gap: 60px;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+        .square {
+            width: 150px;
+            height: 150px;
+            background-color: #569163;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+        }
 
-div {
-    border-style: solid;
-    border-color: rgb(40, 93, 58);
-    background-color: #548057;
-    margin-top: -8%;
+        .square .answer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
+        .square:hover .answer {
+            opacity: 1;
+        }
+        .square:hover .question {
+            opacity: 0;
+        }
 
-}
-
+        .square .question {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
-    
-    <div class="square1">
-        <h1>Hint 1:</h1>
-        <p>Search around the page with your mouse....</p>
-    </div>
-
-
-    <div class="square2">
-        <h1>Hint 2:</h1>
-        <p></p>
-    </div>
-    <div class="square3">
-        <h1>Hint 3:</h1>
-        <p></p>
-    </div>
-
-    <div class="square4">
-        <h1>Hint 4:</h1>
-        <p></p>
-    </div>  
-
-    <div class="square5">
-        <h1>Hint 5:</h1>
-        <p></p>
-    </div>
-    <div class="square6">
-        <h1>Hint 6:</h1>
-        <p></p>
+    <div class="container">
+        <div class="square">
+            <div class="question">Puzzle 1</div>
+            <div class="answer">Search around the page....</div>
+        </div>
+        <div class="square">
+            <div class="question">Puzzle 2</div>
+            <div class="answer">Whats the song name?</div>
+        </div>
+        <div class="square">
+            <div class="question">Puzzle 3</div>
+            <div class="answer">Answer 3</div>
+        </div>
+        <div class="square">
+            <div class="question">Puzzle 4</div>
+            <div class="answer">Answer 4</div>
+        </div>
+        <div class="square">
+            <div class="question">Puzzle 5</div>
+            <div class="answer">Answer 5</div>
+        </div>
+        <div class="square">
+            <div class="question">Puzzle 6</div>
+            <div class="answer">Answer 6</div>
+        </div>
     </div>
 </body>
 </html>
-<!-- hi sabrina -nico -->

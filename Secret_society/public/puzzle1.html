@@ -25,15 +25,20 @@
             
         }
         h4 {
-            opacity:0;
+            opacity: 0;
             font-size: 1em;
             position: absolute;
-            margin-left: -50% ;
-            margin-top:-40%;
+            bottom: 20px; /* Adjust to position it above the bottom edge */
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            background-color: rgba(0, 0, 0, 0.7); /* Background color for readability */
+            color: white; /* Text color */
+            padding: 10px; /* Padding around text */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         h4:hover {
             cursor:progress;  
-            
             animation: fadeIn 3s ease-in forwards;  
         }
 
