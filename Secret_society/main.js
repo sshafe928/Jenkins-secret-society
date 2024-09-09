@@ -1,11 +1,14 @@
-const http = require('http');
+const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
-const server = http.createServer((req, res) => {
-    let filePath = path.join(__dirname, 'public', 'index.html');
 
-    switch(req.url) {
+const app = express();
+app.use(express.static(path.join(__dirname, 'public')));
+app.get('*', (req, res) => {
+    let filePath;
+
+    switch (req.url) {
         case '/':
             filePath = path.join(__dirname, 'public', 'index.html');
             break;
@@ -43,18 +46,15 @@ const server = http.createServer((req, res) => {
 
     fs.readFile(filePath, (err, content) => {
         if (err) {
-            res.writeHead(500);
-            res.end('Error loading the page.');
+            res.status(500).send('Error loading the page.');
         } else {
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(content);
+            res.status(200).send(content);
         }
     });
 });
 
-server.listen(5000, (err) => {
-    if (err) {
-        console.log(err);
-    }
-    console.log('listening on port 5000');
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
 });
