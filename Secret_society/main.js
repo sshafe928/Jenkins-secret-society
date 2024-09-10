@@ -1,11 +1,8 @@
-const express = require('express');
-const path = require('path');
+const http = require('http');
 const fs = require('fs');
+const path = require('path');
 
-
-const app = express();
-app.use(express.static(path.join(__dirname, 'public')));
-app.get('*', (req, res) => {
+const server = http.createServer((req, res) => {
     let filePath;
 
     switch (req.url) {
@@ -46,15 +43,17 @@ app.get('*', (req, res) => {
 
     fs.readFile(filePath, (err, content) => {
         if (err) {
-            res.status(500).send('Error loading the page.');
+            res.statusCode = 500;
+            res.end('Error loading the page.');
         } else {
-            res.status(200).send(content);
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'text/html');
+            res.end(content);
         }
     });
 });
 
-
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
