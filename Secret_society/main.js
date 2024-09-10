@@ -18,13 +18,13 @@ const server = http.createServer((req, res) => {
         case '/baseball':
             filePath = path.join(__dirname, 'public', 'puzzle3.html');
             break;
-        case '/puzzle4':
+        case '/catch-22':
             filePath = path.join(__dirname, 'public', 'puzzle4.html');
             break;
-        case '/puzzle5':
+        case '/keyboard':
             filePath = path.join(__dirname, 'public', 'puzzle5.html');
             break;
-        case '/puzzle6':
+        case '/footsteps':
             filePath = path.join(__dirname, 'public', 'puzzle6.html');
             break;
         case '/answers':
@@ -33,7 +33,7 @@ const server = http.createServer((req, res) => {
         case '/hints':
             filePath = path.join(__dirname, 'public', 'hints.html');
             break;
-        case '/secret':
+        case '/clouds':
             filePath = path.join(__dirname, 'public', 'secret.html');
             break;
         default:

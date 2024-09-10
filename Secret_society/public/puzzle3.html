@@ -3,9 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book Look</title>
+    <style>
+        body {
+            background-color: #f4f1e8; 
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .book {
+            width: 600px;
+            height: 400px;
+            background-color: #fff;
+            border: 2px solid #d3b68c; 
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .cover {
+            background-color: #e5cba7; 
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        .author {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+            color: #6d4c41; 
+        }
+
+        .content {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #d3b68c; 
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin: 0 0 10px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="book">
+        <div class="cover">
+            <h1 class="title">[Input title here]</h1>
+            <p class="author">By Joseph Heller</p>
+        </div>
+        <div class="content">
+            <h2>Chapter 1: The Texan</h2>
+            <p>Rarely seen, this classic book's first chapter is full of mischief. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
 </body>
 </html>

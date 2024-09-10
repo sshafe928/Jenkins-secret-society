@@ -28,13 +28,13 @@
             opacity: 0;
             font-size: 1em;
             position: absolute;
-            bottom: 20px; /* Adjust to position it above the bottom edge */
+            bottom: 20px; 
             left: 50%;
-            transform: translateX(-50%); /* Center horizontally */
-            background-color: rgba(0, 0, 0, 0.7); /* Background color for readability */
-            color: white; /* Text color */
-            padding: 10px; /* Padding around text */
-            border-radius: 5px; /* Rounded corners */
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7); 
+            color: white; 
+            padding: 10px; 
+            border-radius: 5px; 
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         h4:hover {
@@ -48,7 +48,6 @@
             animation: fadeOut 1s ease-in forwards;
         }
 
-        /* The animation uses a delay based on the letter's index */
         @keyframes fadeOut {
             0% {
                 opacity: 1;
@@ -82,15 +81,14 @@
         document.addEventListener("DOMContentLoaded", function() {
             const header = document.getElementById('header');
             const text = header.textContent;
-            header.innerHTML = ''; // Clear the original text
+            header.innerHTML = ''; 
 
-            // Create spans for each letter
+            
             text.split('').forEach((char, index) => {
                 const span = document.createElement('span');
                 span.className = 'letter';
                 span.textContent = char;
-                // Set the delay based on the index
-                span.style.animationDelay = `${index * 0.2}s`; // Adjust the delay time as needed
+                span.style.animationDelay = `${index * 0.2}s`;
                 header.appendChild(span);
             });
         });
